@@ -1,0 +1,50 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "env-cmd -f ./env/prod.env nodemon server.js",
+    "dev": "env-cmd -f ./env/dev.env nodemon server.js",
+    "local": "env-cmd -f ./env/local.env nodemon server.js",
+    "lint": "eslint",
+    "test": "mocha"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "anfuspotai",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-useragent": "^1.0.15",
+    "express-validator": "^6.10.0",
+    "html-minifier-terser": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.45",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.3.2",
+    "qrcode": "^1.5.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "eslint": "^8.57.0",
+    "globals": "^15.0.0",
+    "mocha": "^10.1.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^3.0.0"
+  }
+}

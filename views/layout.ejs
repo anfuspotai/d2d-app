@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= process.env.EVENT_NAME %></title>
+
+    <link rel="shortcut icon" href="<%= process.env.GLOBAL_STATIC %>assets/images/logo/favicon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="<%= process.env.GLOBAL_STATIC %>assets/images/logo/favicon.png" type="image/png" />
+    
+    <script src="https://cdn-in.pagesense.io/js/samaaro/e7f08145acf54ced9964c8498f00fdee.js"></script>
+    <!-- Bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap pooper and js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Sweet ALert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Font -->
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css" />
+
+    <link rel="stylesheet" href="/static/css/layout.css" />
+    <link rel="stylesheet" href="/static/css/loader.css" />
+
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <script>
+      let basePath = `<%= process.env.BASE_PATH %>`;
+      const setBasePath = (route) => (basePath ? `/${basePath + route}` : route);
+
+      if (basePath) {
+        base.href = "/" + "<%= process.env.BASE_PATH %>" + "/";
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(base);
+        console.log(head);
+      }
+
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2885694, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+
+  <body>
+    <div id="app" style="filter: blur(2px)"><%- body %></div>
+
+    <div
+      id="spinner"
+      class="justify-content-center align-items-center"
+      style="display: flex; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0"
+    >
+      <!-- <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div> -->
+
+      <div class="boxes">
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <%- include ('./partials/messages') %>
+  </body>
+  <script>
+    let navbarColor = JSON.parse(localStorage.getItem("navbarColor") || false);
+
+    // if(navbarColor){
+    //     document.documentElement.style.setProperty('--navbar-primary-color', navbarColor.primaryColor);
+    //     document.documentElement.style.setProperty('--navbar-secondary-color', navbarColor.secondaryColor);
+    //     document.documentElement.style.setProperty('--navbar-profile-color', navbarColor.profileColor);
+    //     document.documentElement.style.setProperty('--navbar-polls-color', navbarColor.pollsBgColor);
+    //     document.documentElement.style.setProperty('--navbar-icons-color',navbarColor.navIconsColor)
+    //     document.documentElement.style.setProperty('--navbar-navActive-color',navbarColor.navActiveColor)
+    // }else{
+    document.documentElement.style.setProperty("--navbar-primary-color", "#151521");
+    document.documentElement.style.setProperty("--navbar-secondary-color", "#fa491f");
+    document.documentElement.style.setProperty("--navbar-profile-color", "#435EBE");
+    document.documentElement.style.setProperty("--navbar-icons-color", "#435EBE");
+    document.documentElement.style.setProperty("--navbar-navActive-color", "#ffff");
+
+    // }
+    $(document).ready(() =>
+      $('[data-toggle="tooltip"]').tooltip({
+        html: true,
+      })
+    );
+
+    function axiosError(error) {
+      if (!error) return;
+
+      try {
+        if (error.response) {
+          console.log(error.response);
+          failureAlert(error.response.data.errors[0].message);
+        } else {
+          failureAlert("Server unreachable!!");
+        }
+      } catch (error) {
+        console.error(error);
+        failureAlert("Server unreachable!!");
+      }
+
+      return { error, axiosError: error.response };
+    }
+
+    function loading(status = false) {
+      if (status) {
+        $("#spinner").css("display", "flex");
+        $("#app").css("filter", "blur(2px)");
+      } else {
+        $("#spinner").css("display", "none");
+        $("#app").css("filter", "none");
+      }
+    }
+  </script>
+</html>
