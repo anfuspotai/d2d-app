@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
 // eslint-disable-next-line no-undef
 app.use(`/static`, express.static(path.join(__dirname, "public")));
 
-app.use(`/`, require("./routes/index"));
+app.use(`/api/v1/`, require("./routes/index"));
 const errorHandler = require("./app/middlewares/error-handlers/error-handler");
 
 app.use("*", function (req, res) {
